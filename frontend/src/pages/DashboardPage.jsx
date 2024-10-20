@@ -6,7 +6,7 @@ const DashboardPage = () => {
     const { user, logout } = useAuthStore();
 
     console.log("User Object:", user); // Check the user object
-    console.log("Last Login Value:", user.lastLogin); // Check last login value
+    console.log("Last Login Value:", user.lastlogin); // Check last login value
 
     const handleLogout = () => {
         logout();
@@ -52,7 +52,7 @@ const DashboardPage = () => {
                     </p>
                     <p className='text-gray-300'>
                         <span className='font-bold'>Last Login: </span>
-                        {formatDate(user.lastLogin)} {/* Ensure this is a valid date */}
+                        {formatDate(user.lastlogin)} {/* Ensure this is a valid date */}
                     </p>
                 </motion.div>
             </div>
