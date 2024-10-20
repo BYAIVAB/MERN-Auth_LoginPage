@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth" ;
+const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
 
 axios.defaults.withCredentials = true;
 
@@ -10,7 +10,7 @@ export const useAuthStore = create((set) => ({
     isAuthenticated: false,
     error: null,
     isLoading: false,
-    isCheckingAuth: true,git 
+    isCheckingAuth: true, 
     message: null,
 
     signup: async (email, password, name) => {
@@ -73,14 +73,14 @@ export const useAuthStore = create((set) => ({
         }
     },
 
-    forgetPassword: async (email) => {  
+    forgetPassword: async (email) => {
         set({ isLoading: true, error: null });
         try {
             const response = await axios.post(`${API_URL}/forgot-password`, { email });
-            console.log("Response data:", response.data); 
+            console.log("Response data:", response.data);
             set({ message: response.data.message, isLoading: false });
         } catch (error) {
-            console.error("Error response:", error.response); 
+            console.error("Error response:", error.response);
             set({
                 isLoading: false,
                 error: error.response?.data?.message || "Error sending reset password email",
@@ -95,11 +95,10 @@ export const useAuthStore = create((set) => ({
             const response = await axios.post(`${API_URL}/reset-password/${token}`, { password });
             
             // Assuming the backend sends an access token in the response
-            const accessToken = response.data.accessToken; 
+            const accessToken = response.data.accessToken;
             console.log("Access Token:", accessToken); // Log the access token
-    
+
             set({ message: response.data.message, isLoading: false });
-            
             return accessToken; // Return the access token if needed elsewhere
         } catch (error) {
             set({
@@ -108,7 +107,5 @@ export const useAuthStore = create((set) => ({
             });
             throw error;
         }
-    },    
-    
-
+    },
 }));
