@@ -12,23 +12,6 @@ This project is a **Login Authentication System** built using the **MERN Stack (
 - Real-time error handling and user feedback with **React Hot Toast**.
 - State management using **Zustand**.
 
-## Tech Stack ->
-# Frontend -
-- **React** (UI library)
-- **TailwindCSS** (CSS framework)
-- **Vite** (Build tool)
-- **Axios** (HTTP client)
-- **Framer Motion** (Animations)
-- **Lucide-React** (Icon library)
-- **React Router DOM** (Routing)
-
-# Backend -
-- **Node.js** (Runtime)
-- **Express** (Framework)
-- **MongoDB** (Database)
-- **JWT** (Authentication)
-- **bcrypt** (Password hashing)
-- 
 ### Installation ->
 
 1. Install dependencies:
